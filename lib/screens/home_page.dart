@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:portfolio_app/widget/keyhole_hub.dart';
-import 'package:portfolio_app/widget/keyhole_cursor_area.dart';
-import 'package:portfolio_app/widget/page_header.dart';
-import 'package:portfolio_app/widget/section_heading.dart';
+import 'package:portfolio_uxplanner/widget/keyhole_hub.dart';
+import 'package:portfolio_uxplanner/widget/keyhole_cursor_area.dart';
+import 'package:portfolio_uxplanner/widget/page_header.dart';
+import 'package:portfolio_uxplanner/widget/section_heading.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -93,7 +93,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                       ),
                       const SizedBox(height: 32),
                       const Text(
-                        'KIM SUMIN — UX RESEARCHER',
+                        'KIM SUMIN — UX / SERVICE PLANNER',
                         style: TextStyle(
                           fontFamily: 'IBM Plex Mono',
                           fontSize: 13,
@@ -103,7 +103,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                       ),
                       const SizedBox(height: 12),
                       const Text(
-                        '질문을 다시 세우는 것에서, 리서치는 시작됩니다',
+                        '질문을 다시 세우는 것에서, 기획은 시작됩니다',
                         style: TextStyle(
                           fontFamily: 'Gowun Batang',
                           fontSize: 17,

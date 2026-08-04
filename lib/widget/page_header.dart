@@ -6,7 +6,7 @@ class PageHeader extends StatelessWidget {
 
   const PageHeader({
     super.key,
-    this.label = 'KIM SUMIN — UX RESEARCHER', // 기본값 지정
+    this.label = 'KIM SUMIN — UX / SERVICE PLANNER', // 기본값 지정
   });
 
   @override

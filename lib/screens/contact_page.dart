@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:portfolio_app/widget/page_header.dart';
-import 'package:portfolio_app/widget/icon_button_link.dart';
-import 'package:portfolio_app/widget/linkedin_icon.dart';
-import 'package:portfolio_app/widget/keyhole_hub.dart';
+import 'package:portfolio_uxplanner/widget/page_header.dart';
+import 'package:portfolio_uxplanner/widget/icon_button_link.dart';
+import 'package:portfolio_uxplanner/widget/linkedin_icon.dart';
+import 'package:portfolio_uxplanner/widget/keyhole_hub.dart';
 
 class ContactPage extends StatelessWidget {
   const ContactPage({super.key});
 
-  static const String _email = 'your-email@example.com';
-  static const String _linkedinUrl = 'https://www.linkedin.com/in/your-id';
+  static const String _email = 'sumin031225@gmail.com';
+  static const String _linkedinUrl = 'www.linkedin.com/in/김수민';
   static const String _resumeUrl = 'https://your-resume-link.com';
 
   Future<void> _launchEmail() async {

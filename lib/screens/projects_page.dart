@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:portfolio_app/widget/page_header.dart';
-import 'package:portfolio_app/widget/project_card.dart';
+import 'package:portfolio_uxplanner/widget/page_header.dart';
+import 'package:portfolio_uxplanner/widget/project_card.dart';
 
 class ProjectsPage extends StatelessWidget {
   const ProjectsPage({super.key});
@@ -10,17 +10,17 @@ class ProjectsPage extends StatelessWidget {
     {
       'id': 'chatbot',
       'title': '맥락을 놓치지 않는 대화 경험',
-      'meta': '4주 · 설문 100 · 인터뷰 20',
+      'meta': '이탈 원인 재정의 → 하이브리드 인터랙션 설계',
     },
     {
       'id': 'lgsuite',
       'title': '회복으로 이어지는 회복 경험',
-      'meta': '텍스트마이닝 · 15,000건+',
+      'meta': '데이터 15,000건 → B2B 숙박 서비스 컨셉',
     },
     {
       'id': 'org',
       'title': '성장을 설계하는 조직 경험',
-      'meta': '5주 · 인터뷰 기반',
+      'meta': '	경험 흐름 분석 → 자기개발 포인트 제도 설계',
     },
   ];
 

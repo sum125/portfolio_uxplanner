@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_app/widget/page_header.dart';
-import 'package:portfolio_app/widget/redefinition_mark.dart';
-import 'package:portfolio_app/widget/rich_body_text.dart';
-import 'package:portfolio_app/widget/process_flow.dart';
-import 'package:portfolio_app/widget/tool_tags.dart';
+import 'package:portfolio_uxplanner/widget/page_header.dart';
+import 'package:portfolio_uxplanner/widget/redefinition_mark.dart';
+import 'package:portfolio_uxplanner/widget/rich_body_text.dart';
+import 'package:portfolio_uxplanner/widget/process_flow.dart';
+import 'package:portfolio_uxplanner/widget/tool_tags.dart';
 
 class AboutPage extends StatelessWidget {
   const AboutPage({super.key});
@@ -107,7 +107,7 @@ class AboutPage extends StatelessWidget {
                     ),
                   ),
                   child: const RichBodyText(
-                    text: '주어진 질문에 바로 답하지 않는 것, 그 질문 자체가 맞는지부터 따지는 것. 그게 제가 판단할 때 가장 먼저 하는 일입니다.',
+                    text: '주어진 질문에 바로 답하지 않는 것, 그 질문 자체가 맞는지부터 따지는 것. 좋은 기획은 거기서 시작된다고 믿습니다.',
                     style: TextStyle(
                       fontFamily: 'Gowun Batang',
                       fontSize: 16,
@@ -184,7 +184,7 @@ class AboutPage extends StatelessWidget {
 
         const RichBodyText(
           text:
-              '경제학은 사람이 합리적으로 선택한다고 가정합니다. 그런데 실제론 그렇지 않은 선택들이 계속 보였고, 맥락을 이해하고 싶어서 상담·UX심리학을 함께 공부했습니다.\n\n사람의 행동과 심리를 관찰해 인사이트를 찾고, 그 인사이트로 반응이 실제로 바뀌는 과정을 직접 확인할 수 있다는 점에서 UX 리서치의 매력을 느꼈습니다.',
+              '경제학은 사람이 합리적으로 선택한다고 가정합니다. 그런데 실제론 그렇지 않은 선택들이 계속 보였고, 맥락을 이해하고 싶어서 상담·UX심리학을 함께 공부했습니다.\n\n사람의 행동과 심리를 관찰해 인사이트를 찾고, 관찰에서 찾은 인사이트가 실제 서비스의 구조와 화면으로 바뀌는 순간이 좋았습니다. 그래서 발견에서 멈추지 않고 결정하고 설계하는 일을 하고 싶습니다.',
           style: TextStyle(
             fontFamily: 'Noto Sans KR',
             fontWeight: FontWeight.w300,

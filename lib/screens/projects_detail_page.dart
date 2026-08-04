@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:portfolio_app/widget/page_header.dart';
-import 'package:portfolio_app/widget/redefinition_mark.dart';
-import 'package:portfolio_app/widget/spec_table.dart';
-import 'package:portfolio_app/widget/story_section.dart';
-import 'package:portfolio_app/widget/key_moment.dart';
-import 'package:portfolio_app/widget/section_nav_dots.dart';
-import 'package:portfolio_app/widget/prototype_carousel.dart';
-import 'package:portfolio_app/widget/prev_next_project_nav.dart';
-import 'package:portfolio_app/widget/process_flow.dart';
-import 'package:portfolio_app/widget/question_flow.dart';
-import 'package:portfolio_app/widget/glossary_term.dart';
-import 'package:portfolio_app/widget/rich_body_text.dart';
+import 'package:portfolio_uxplanner/widget/page_header.dart';
+import 'package:portfolio_uxplanner/widget/redefinition_mark.dart';
+import 'package:portfolio_uxplanner/widget/spec_table.dart';
+import 'package:portfolio_uxplanner/widget/story_section.dart';
+import 'package:portfolio_uxplanner/widget/key_moment.dart';
+import 'package:portfolio_uxplanner/widget/section_nav_dots.dart';
+import 'package:portfolio_uxplanner/widget/prototype_carousel.dart';
+import 'package:portfolio_uxplanner/widget/prev_next_project_nav.dart';
+import 'package:portfolio_uxplanner/widget/process_flow.dart';
+import 'package:portfolio_uxplanner/widget/question_flow.dart';
+import 'package:portfolio_uxplanner/widget/glossary_term.dart';
+import 'package:portfolio_uxplanner/widget/rich_body_text.dart';
 
 class ProjectsDetailPage extends StatefulWidget {
   final String projectId;
@@ -26,11 +26,11 @@ class _ProjectsDetailPageState extends State<ProjectsDetailPage> {
   int _activeSection = 0;
 
   final List<String> _sectionLabels = [
-    '요약',
+    '문제',
     '재정의',
-    '방법',
+    '검증',
     '발견',
-    '결정',
+    '설계',
     '회고',
   ];
   final List<GlobalKey> _sectionKeys = List.generate(6, (_) => GlobalKey());
@@ -86,7 +86,8 @@ class _ProjectsDetailPageState extends State<ProjectsDetailPage> {
       'sku': 'Project NO. 01',
       'affiliation': '학부 프로젝트 → 학술지 투고 (리비전 중)',
       'title': 'AI 멘탈케어 챗봇 인터랙션 분석',
-      'summary': '가이드형과 개방형 인터랙션을 비교하며 선호와 이탈 원인을 분리했고, 두 구조 모두에서 반복되는 이탈의 진짜 원인이 맥락 파악 실패에 있다는 것을 발견했습니다.',
+      'summary':
+          '가이드형과 개방형 중 무엇이 나은지 비교해보는 것에서 출발했지만, 두 구조 모두에서 반복되는 이탈의 원인이 맥락 파악 실패에 있다는 것을 확인했습니다. 그래서 하나의 정답 구조를 고르는 대신, 사용자가 필요할 때 구조를 켜고 끌 수 있는 하이브리드 인터랙션을 설계하고 진입·대화·종결 3단계 프로토타입으로 구체화했습니다. 진입 단계의 시점 선택권은 "대화를 강요당한다"는 불만에, 감정 칩은 맥락 확인 실패라는 핵심 이탈 원인에, 종결 선택권은 "끝없는 공감이 답답하다"는 핵심 페인포인트에 각각 대응하는 설계입니다.',
       'original': '가이드형과 개방형, 어떤 인터랙션이 더 나은가',
       'redefined': '구조와 무관하게, 사용자는 언제 맥락을 잃고 이탈하는가',
       'specs': {
@@ -149,38 +150,20 @@ class _ProjectsDetailPageState extends State<ProjectsDetailPage> {
           '먼저 타겟부터 데이터로 검증했습니다. 2026년 한국 50세 이상 인구가 46%를 넘고, 2050년엔 이들의 소비지출 비중이 71%까지 늘어날 것으로 전망됩니다. 그중에서도 **액티브 시니어**와 **일반 시니어**는 다른 집단으로 구분지어야 합니다. 신한카드 데이터에 따르면 액티브 시니어의 소비는 늘고(+10%) 일반 시니어는 줄고(-22%) 있었기 때문입니다.\n\n이들이 원하는 건 돌봄이 아니라 경험 가치인데, LG는 아직 기능 제공에 머물러 있다는 게 저희가 잡은 핵심 난제였습니다.',
       'process': [
         {
-          'title': '1차 크롤링 — 관심사 전반',
-          'description': '액티브 시니어는 어떤 것에 관심이 있을까라는 열린 질문으로 시작했습니다. 시니어 라이프스타일 카페 3곳에서 5,197건을 모아 전처리 후 4,889건을 확보했습니다.',
+          'title': '타겟 검증',
+          'description': '액티브 시니어를 데이터로 검증 (인구·소비 지표)\n시니어 라이프스타일 카페 3곳에서 5,197건을 모아 전처리 후 4,889건을 확보했습니다.',
         },
         {
-          'title': '핵심 키워드 도출',
-          'description':
-              '노후소득, 건강여가, 가족, 여행여가 등으로 주제가 나뉘었는데, 그중 여행·여가가 879건으로 가장 두드러졌습니다. 또한, 액티브 시니어의 소비지출 중 여가활동의 지출이 40% 이상이었기 때문에 여행을 액티브 시니어의 핵심 키워드로 선정했습니다.',
+          'title': '기회 발굴',
+          'description': '관심사 전반 크롤링(노후소득, 건강여가, 가족, 여행여가) → 여행이 최대 주제로 부상 (4,889건)',
         },
         {
-          'title': '2차 크롤링 — 여행으로 집중',
-          'description': '액티브 시니어는 여행에서 어떤 즐거움과 고통을 겪고 있는지 파악하기 위해 여행 관련 카페·블로그에서 41,411건의 데이터를 추가로 수집했습니다.',
+          'title': '니즈 구조화',
+          'description': '여행 데이터 16,027건을 4개 Actor로 군집화, Opportunity Map으로 미충족 영역 특정',
         },
         {
-          'title': '분류기로 정제',
-          'description':
-              'SBERT+RandomForest로 여행 관련 내용 여부를 판별하는 분류기를 만들어(F1-Score 0.95) 무관한 데이터를 걸러냈습니다. 최종 16,027건이 남았습니다.',
-        },
-        {
-          'title': 'Actor 군집화',
-          'description': 'SBERT 임베딩과 UMAP+HDBSCAN으로 4개 Actor 클러스터를 나눴습니다.',
-        },
-        {
-          'title': 'Action·기회영역 분석',
-          'description': 'NMF로 클러스터별 행동 패턴(Action)을 추출하고, 중요도와 만족도를 교차한 Opportunity Map으로 어디에 기회가 있는지 구조화했습니다.',
-        },
-        {
-          'title': '페르소나 선정',
-          'description': '4개 Actor 중 숙소 품질·위치 비교형을 최종 페르소나로 선정했습니다.',
-        },
-        {
-          'title': '데이터 기반 솔루션 도출',
-          'description': '이 페르소나의 여정에서 제품이 자연스럽게 개입할 수 있는 지점을 찾아, 제품을 경험의 중심이 아니라 경험 안에 스며드는 요소로 설계했습니다.',
+          'title': '컨셉 결정',
+          'description': '여행을 온전히 즐기기 위한 회복 니즈 → LG SUITE 컨셉 정의, 경쟁사 검증',
         },
       ],
       'pivot':
@@ -205,7 +188,7 @@ class _ProjectsDetailPageState extends State<ProjectsDetailPage> {
     'org': {
       'sku': 'Project NO. 03',
       'affiliation': '학부 팀 프로젝트',
-      'title': '성장을 위한 조직경험 설계',
+      'title': '성장 몰입을 만드는 조직 제도 설계 — GGP',
       'summary': '조직 문화를 만족도 조사로 접근하지 않기로 결정하고, 구성원의 실제 경험 흐름을 인터뷰로 재구성해 조직 경험이 형성되는 지점을 분석했습니다.',
       'original': '구성원들은 조직 생활에 얼마나 만족하는가',
       'redefined': '구성원은 입사부터 지금까지 어떤 경험 흐름을 지나왔고, 그 흐름의 어디서 몰입이 생기고 어디서 단절되는가',
