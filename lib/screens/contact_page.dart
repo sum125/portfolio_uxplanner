@@ -9,7 +9,7 @@ class ContactPage extends StatelessWidget {
   const ContactPage({super.key});
 
   static const String _email = 'sumin031225@gmail.com';
-  static const String _linkedinUrl = 'www.linkedin.com/in/김수민';
+  static const String _linkedinUrl = 'https://www.linkedin.com/in/김수민';
   static const String _resumeUrl = 'https://your-resume-link.com';
 
   Future<void> _launchEmail() async {
