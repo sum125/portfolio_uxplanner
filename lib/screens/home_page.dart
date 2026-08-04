@@ -182,7 +182,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
             children: [
               const SectionHeading(
                 title: "사용자의 망설임을 관찰합니다",
-                subtitle: "질문을 다시 세우는 것에서, 리서치는 시작됩니다",
+                subtitle: "질문을 다시 세우는 것에서, 기획은 시작됩니다",
               ),
               const SizedBox(height: 20),
               _viewAllCta(context),
@@ -194,7 +194,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
               const Expanded(
                 child: SectionHeading(
                   title: "사용자의 망설임을 관찰합니다",
-                  subtitle: "질문을 다시 세우는 것에서, 리서치는 시작됩니다",
+                  subtitle: "질문을 다시 세우는 것에서, 기획은 시작됩니다",
                 ),
               ),
               _viewAllCta(context),

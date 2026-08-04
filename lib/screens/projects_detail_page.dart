@@ -159,7 +159,7 @@ class _ProjectsDetailPageState extends State<ProjectsDetailPage> {
         },
         {
           'title': '니즈 구조화',
-          'description': '여행 데이터 16,027건을 4개 Actor로 군집화, Opportunity Map으로 미충족 영역 특정',
+          'description': '2차 크롤링을 통해 얻은 여행 데이터 16,027건을 4개 Actor로 군집화, Opportunity Map으로 미충족 영역 특정',
         },
         {
           'title': '컨셉 결정',
