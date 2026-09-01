@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:portfolio_uxplanner/widget/page_header.dart';
 import 'package:portfolio_uxplanner/widget/redefinition_mark.dart';
 import 'package:portfolio_uxplanner/widget/spec_table.dart';
@@ -81,6 +82,11 @@ class _ProjectsDetailPageState extends State<ProjectsDetailPage> {
     }
   }
 
+  Future<void> _launchExternal(String url) async {
+    final uri = Uri.parse(url);
+    await launchUrl(uri, mode: LaunchMode.externalApplication);
+  }
+
   static const Map<String, Map<String, dynamic>> _data = {
     'chatbot': {
       'sku': 'Project NO. 01',
@@ -121,10 +127,12 @@ class _ProjectsDetailPageState extends State<ProjectsDetailPage> {
           'caption': '마무리 단계 — 종결 시점의 선택권',
         },
       ],
+      'liveDemoUrl': 'https://chatbot5-wheat.vercel.app/',
+      'liveDemoNote': '설계에서 그치지 않고, Claude Code를 활용한 바이브 코딩으로 직접 구현까지 해봤습니다.',
       'outcomeHeight': null,
       'outcomeWidth': null,
 
-      'paperStatus': '현재 학술지 리비전(수정 후 재심사) 진행 중입니다',
+      'paperStatus': 'JMIR Human Factors 투고 · 수정 후 게재 판정을 받아 재심사 중입니다',
       'paperMotivation': null,
       'paperExpansion':
           '표본도 다시 설계했습니다. 초기 인터뷰 8명은 패턴을 발견하기엔 충분했지만, 그 패턴이 우연이 아니라는 걸 증명하기엔 부족했습니다. 설문 조사를 100명으로, 직접 사용해보는 인터뷰는 20명으로 확장해 연구를 확장했습니다.\n\n설문 설계, 인터뷰 진행, 정성 코딩, 통계분석을 진행하였습니다.',
@@ -395,6 +403,56 @@ class _ProjectsDetailPageState extends State<ProjectsDetailPage> {
                           ),
                           const SizedBox(height: 40),
                         ],
+                        if (data['liveDemoUrl'] != null) ...[
+                          GestureDetector(
+                            onTap: () =>
+                                _launchExternal(data['liveDemoUrl'] as String),
+                            child: MouseRegion(
+                              cursor: SystemMouseCursors.click,
+                              child: Container(
+                                padding: const EdgeInsets.all(16),
+                                decoration: BoxDecoration(
+                                  border: Border.all(
+                                    color: const Color(0xFFA73B2E),
+                                    width: 1,
+                                  ),
+                                  borderRadius: BorderRadius.circular(4),
+                                ),
+                                child: Row(
+                                  children: [
+                                    const Icon(
+                                      Icons.play_circle_outline,
+                                      size: 18,
+                                      color: Color(0xFFA73B2E),
+                                    ),
+                                    const SizedBox(width: 10),
+                                    Expanded(
+                                      child: Text(
+                                        data['liveDemoNote'] as String,
+                                        style: const TextStyle(
+                                          fontFamily: 'Noto Sans KR',
+                                          fontSize: 13,
+                                          height: 1.6,
+                                          color: Color(0xFF1D1D1B),
+                                        ),
+                                      ),
+                                    ),
+                                    const SizedBox(width: 10),
+                                    const Text(
+                                      '바로가기 →',
+                                      style: TextStyle(
+                                        fontFamily: 'IBM Plex Mono',
+                                        fontSize: 12,
+                                        color: Color(0xFFA73B2E),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(height: 40),
+                        ],
                         if (outcomes != null && outcomes.isNotEmpty) ...[
                           const Text(
                             'OUTCOME',
@@ -458,7 +516,7 @@ class _ProjectsDetailPageState extends State<ProjectsDetailPage> {
                           const SizedBox(height: 10),
                           GlossaryParagraph(
                             segments: [
-                              const GlossarySegment.text('학기 프로젝트에서 쓴 성향 축은 저희가 만든 '),
+                              const GlossarySegment.text('프로젝트 결과를 보신 지도교수님의 제안으로 후속 연구를 시작했습니다. 학기 프로젝트에서 쓴 성향 축은 저희가 만든 '),
                               GlossarySegment.term(
                                 text: '문항 2개',
                                 definition:
