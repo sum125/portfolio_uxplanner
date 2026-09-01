@@ -127,8 +127,7 @@ class _ProjectsDetailPageState extends State<ProjectsDetailPage> {
           'caption': '마무리 단계 — 종결 시점의 선택권',
         },
       ],
-      'liveDemoUrl': 'https://chatbot5-wheat.vercel.app/',
-      'liveDemoNote': '설계에서 그치지 않고, Claude Code를 활용한 바이브 코딩으로 직접 구현까지 해봤습니다.',
+      'sideProjectUrl': 'https://chatbot5-wheat.vercel.app/',
       'outcomeHeight': null,
       'outcomeWidth': null,
 
@@ -403,56 +402,6 @@ class _ProjectsDetailPageState extends State<ProjectsDetailPage> {
                           ),
                           const SizedBox(height: 40),
                         ],
-                        if (data['liveDemoUrl'] != null) ...[
-                          GestureDetector(
-                            onTap: () =>
-                                _launchExternal(data['liveDemoUrl'] as String),
-                            child: MouseRegion(
-                              cursor: SystemMouseCursors.click,
-                              child: Container(
-                                padding: const EdgeInsets.all(16),
-                                decoration: BoxDecoration(
-                                  border: Border.all(
-                                    color: const Color(0xFFA73B2E),
-                                    width: 1,
-                                  ),
-                                  borderRadius: BorderRadius.circular(4),
-                                ),
-                                child: Row(
-                                  children: [
-                                    const Icon(
-                                      Icons.play_circle_outline,
-                                      size: 18,
-                                      color: Color(0xFFA73B2E),
-                                    ),
-                                    const SizedBox(width: 10),
-                                    Expanded(
-                                      child: Text(
-                                        data['liveDemoNote'] as String,
-                                        style: const TextStyle(
-                                          fontFamily: 'Noto Sans KR',
-                                          fontSize: 13,
-                                          height: 1.6,
-                                          color: Color(0xFF1D1D1B),
-                                        ),
-                                      ),
-                                    ),
-                                    const SizedBox(width: 10),
-                                    const Text(
-                                      '바로가기 →',
-                                      style: TextStyle(
-                                        fontFamily: 'IBM Plex Mono',
-                                        fontSize: 12,
-                                        color: Color(0xFFA73B2E),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                          const SizedBox(height: 40),
-                        ],
                         if (outcomes != null && outcomes.isNotEmpty) ...[
                           const Text(
                             'OUTCOME',
@@ -592,6 +541,106 @@ class _ProjectsDetailPageState extends State<ProjectsDetailPage> {
                           StorySection(
                             heading: 'REVISED CONCLUSION',
                             body: data['paperConclusion'],
+                          ),
+                          const SizedBox(height: 48),
+                        ],
+                        if (data['sideProjectUrl'] != null) ...[
+                          const Text(
+                            'AFTER THE PAPER',
+                            style: TextStyle(
+                              fontFamily: 'IBM Plex Mono',
+                              fontSize: 11,
+                              color: Color(0xFFA73B2E),
+                              letterSpacing: 1,
+                            ),
+                          ),
+                          const SizedBox(height: 10),
+                          const Text(
+                            '논문이 마무리된 후, 개인적으로 만들어본 사이드 프로젝트입니다',
+                            style: TextStyle(
+                              fontFamily: 'IBM Plex Mono',
+                              fontSize: 11,
+                              color: Color(0xFFA6A29B),
+                            ),
+                          ),
+                          const SizedBox(height: 24),
+                          GlossaryParagraph(
+                            segments: [
+                              const GlossarySegment.text(
+                                '인터뷰에서 반복해서 들었던 인사이트가 있었습니다 — ',
+                              ),
+                              GlossarySegment.term(
+                                text: '감정을 정확히 정의하는 것',
+                                definition:
+                                    '지금 느끼는 감정이 무엇인지 정확한 언어로 짚어내는 것. 논문에서 다룬 정서명료성(Emotion Clarity, K-DERS)과 같은 개념입니다.',
+                                rationale:
+                                    '정서명료성이 낮을수록 챗봇에게 기대하는 게 달라진다는 게 논문의 핵심 발견 중 하나였는데, 그 발견을 실제로 써먹어보고 싶었습니다.',
+                              ),
+                              const GlossarySegment.text(
+                                '만으로도 위로가 된다는 것이었습니다. 이 발견을 직접 구현해보고 싶어서, 감정을 정의하도록 돕는 하이브리드형 챗봇을 혼자 만들었습니다.',
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 16),
+                          const RichBodyText(
+                            text:
+                                '해달은 무리 지어 서로 손을 잡고 함께 떠 있는 습성이 있습니다. 그 습성에서 착안해, 사용자 곁에 친근하게 머무르는 캐릭터로 UI를 구성했습니다.',
+                            style: TextStyle(
+                              fontFamily: 'Noto Sans KR',
+                              fontWeight: FontWeight.w300,
+                              fontSize: 15,
+                              height: 1.8,
+                              color: Color(0xFF1D1D1B),
+                            ),
+                          ),
+                          const SizedBox(height: 24),
+                          GestureDetector(
+                            onTap: () => _launchExternal(
+                              data['sideProjectUrl'] as String,
+                            ),
+                            child: MouseRegion(
+                              cursor: SystemMouseCursors.click,
+                              child: Container(
+                                padding: const EdgeInsets.all(16),
+                                decoration: BoxDecoration(
+                                  border: Border.all(
+                                    color: const Color(0xFFA73B2E),
+                                    width: 1,
+                                  ),
+                                  borderRadius: BorderRadius.circular(4),
+                                ),
+                                child: Row(
+                                  children: [
+                                    const Icon(
+                                      Icons.play_circle_outline,
+                                      size: 18,
+                                      color: Color(0xFFA73B2E),
+                                    ),
+                                    const SizedBox(width: 10),
+                                    const Expanded(
+                                      child: Text(
+                                        'Claude Code로 바이브 코딩해 직접 구현한 챗봇입니다',
+                                        style: TextStyle(
+                                          fontFamily: 'Noto Sans KR',
+                                          fontSize: 13,
+                                          height: 1.6,
+                                          color: Color(0xFF1D1D1B),
+                                        ),
+                                      ),
+                                    ),
+                                    const SizedBox(width: 10),
+                                    const Text(
+                                      '바로가기 →',
+                                      style: TextStyle(
+                                        fontFamily: 'IBM Plex Mono',
+                                        fontSize: 12,
+                                        color: Color(0xFFA73B2E),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
                           ),
                           const SizedBox(height: 48),
                         ],
